@@ -1,0 +1,86 @@
+{% extends 'back/base.html' %}
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                {{title}}
+                            </h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nama</label>
+                                <div class="col-md-9">
+                                    {{artikel.nama}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Asma</label>
+                                <div class="col-md-9">
+                                    {{artikel.asma}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Audio</label>
+                                <div class="col-md-9">
+                                    {{artikel.audio}}
+                                </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Ayat</label>
+                                <div class="col-md-9">
+                                    {{artikel.ayat}}
+                                </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Keterangan</label>
+                                <div class="col-md-9">
+                                    {{artikel.keterangan}}
+                                </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nama</label>
+                                <div class="col-md-9">
+                                    {{artikel.nama}}
+                                </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nomor</label>
+                                <div class="col-md-9">
+                                    {{artikel.nomor}}
+                                </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Rukuk</label>
+                                <div class="col-md-9">
+                                    {{artikel.rukuk}}
+                                </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Type</label>
+                                <div class="col-md-9">
+                                    {{artikel.type}}
+                                </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Urut</label>
+                                <div class="col-md-9">
+                                    {{artikel.urut}}
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer text-right">
+                            <div class="form-group">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <a href="{% url 'artikel' %}" type="submit" class="btn btn-fill btn-info">
+                                        Back
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- end card -->
+            </div> <!--  end col-md-6  -->
+        </div>
+</div>
+{% endblock content %}

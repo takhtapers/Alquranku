@@ -1,0 +1,61 @@
+{% extends 'back/base.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="toolbar">
+                            <a class ="btn btn-sm btn-danger" href="{% url 'sinkron_alquran' %}"> Sinkkron Al-Qur'an</a>
+                            <!--Here you can write extra buttons/actions for the toolbar-->
+                        </div>
+                        <table id="bootstrap-table" class="table">
+                            <thead>
+                                <th data-field="state" data-checkbox="true"></th>
+                                <th data-field="arti" class="text-center">Arti</th>
+                                <th data-field="asma" data-sortable="true">Asma</th>
+                                <th data-field="audio" data-sortable="true">Audio</th>
+                                <th data-field="ayat" data-sortable="true">Ayat</th>
+                                <th data-field="keterangan" >Keterangan</th>
+                                <th data-field="nama">Nama</th>
+                                <th data-field="nomor" data-sortable="true">Nomor</th>
+                                <th data-field="rukuk" data-sortable="true">Rukuk</th>
+                                <th data-field="type" data-sortable="true">Type</th>
+                                <th data-field="urut" data-sortable="true">Urut</th>
+                                <th>Actions</th>
+                            </thead>
+                            <tbody>
+                                {% for a in alquran %}
+                                <tr>
+                                    <td></td>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{a.arti}}</td>
+                                    <td>{{a.asma}}</td>
+                                    <td>{{a.audio}}</td>
+                                    <td>{{a.ayat}}</td>
+                                    <td>{{a.keterangan}}</td>
+                                    <td>{{a.nama}}</td>
+                                    <td>{{a.nomor}}</td>
+                                    <td>{{a.rukuk}}</td>
+                                    <td>{{a.type}}</td>
+                                    <td>{{a.urut}}</td>
+                                    <td>
+                                        <a class="btn btn-info text-white bi bi-search" href="{% url 'lihat_surah' a.id %}">Lihat </a>
+                                        
+                                        <a oneclick="return confirm('delete artikel?');"class="btn btn-danger text-white bi bi-trash" href="{% url 'delete_surah' a.id %}">Delete </a>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                </div><!--  end card  -->
+            </div> <!-- end col-md-12 -->
+        </div> <!-- end row -->
+    </div>
+</div>
+{% endblock content %}

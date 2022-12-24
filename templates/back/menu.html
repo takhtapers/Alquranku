@@ -1,0 +1,87 @@
+{% load static %}
+
+<div class="wrapper ">
+    <div class="sidebar" data-color="default" data-active-color="danger">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color=" default | primary | info | success | warning | danger |"
+    -->
+      <div class="logo">
+        <a href="" class="simple-text logo-mini">
+          <div class="logo-image-small">
+            <img src="{% static 'back/img/logo-small.png' %}">
+          </div>
+          <!-- <p>CT</p> -->
+        </a>
+        <a href="" class="simple-text logo-normal">
+          Al-Qur'an Ku
+          <!-- <div class="logo-image-big">
+            <img src="{% static 'back/img/logo-big.png">
+          </div> -->
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <div class="user">
+          <div class="photo">
+            <img src="{% static 'back/img/faces/ayo-ogunseinde-2.jpg' %}" />
+          </div>
+          <div class="info">
+            <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+              <span>
+                {{user}}
+                <b class="caret"></b>
+              </span>
+            </a>
+            <div class="clearfix"></div>
+            <div class="collapse" id="collapseExample">
+              <ul class="nav">
+                <li>
+                  <a href="#">
+                    <span class="sidebar-mini-icon">MP</span>
+                    <span class="sidebar-normal">My Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="sidebar-mini-icon">EP</span>
+                    <span class="sidebar-normal">Edit Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'logout' %}">
+                    <span class="sidebar-mini-icon">S</span>
+                    <span class="sidebar-normal">Logout</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <ul class="nav">
+          <li>
+            <a class="btn-secondary" href="{% url 'home' %}">
+              <i class="nc-icon nc-bank"></i>
+              <p>Previews</p>
+            </a>
+          </li>
+          <li>
+            <a class="btn-warning" href="{% url 'tabel_alquran' %}">
+              <i class="nc-icon nc-single-copy-04"></i>
+              <p>Tabel Al-Qur'an</p>
+            </a>
+          </li>
+          <li>
+            <a class="btn-success" href="{% url 'tabel_doa' %}">
+              <i class="nc-icon nc-single-copy-04"></i>
+              <p>Tabel Doa - Doa</p>
+            </a>
+          </li>
+          <li>
+            <a class="btn-info" href="{% url 'users' %}">
+              <i class="nc-icon nc-ruler-pencil"></i>
+              <p>Tabel Users</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
